@@ -1,0 +1,270 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+
+/* 1. 主页面样式（index.html） */
+.main-entry {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.entry-btn {
+    padding: 20px 60px;
+    font-size: 2rem;
+    background-color: #c41e3a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.entry-btn:hover {
+    background-color: #a0182e;
+    transform: scale(1.05);
+}
+
+/* 2. 登录界面样式（login.html） */
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.login-tab {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.login-tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid #eee;
+    color: #666;
+}
+
+.login-tab-item.active {
+    border-bottom: 2px solid #c41e3a;
+    color: #c41e3a;
+}
+
+.login-form {
+    display: none;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.form-item {
+    margin-bottom: 20px;
+}
+
+.form-item label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.form-item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #c41e3a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-btn:hover {
+    background-color: #a0182e;
+}
+
+.tourist-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.tourist-btn:hover {
+    background-color: #444;
+}
+
+/* 三分区选择界面容器：取消flex，用绝对定位让分区填满屏幕 */
+.theme-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* 改为相对定位，子元素绝对定位 */
+    overflow: hidden;
+}
+
+/* 通用分区样式：绝对定位+宽度调整 */
+.theme-item {
+    width: 38vw;
+    /* 调整宽度，让三个分区叠加后刚好填满屏幕 */
+    height: 100vh;
+    position: absolute;
+    /* 改为绝对定位，精准控制位置 */
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.7);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+#palace {
+    left: 0;
+        /* 左对齐 */
+    background-image: url("../图片素材/主页图/天坛.jpg");
+    clip-path: polygon(0 0, 100% 0, calc(100% - 5vw) 100%, 0 100%);
+    z-index: 1;
+}
+
+#homestay {
+    left: 28vw;
+        /* 计算：38vw - 10vw = 28vw（重叠10vw） */
+    background-image: url("../图片素材/主页图/民宿（主页）.jpg");
+    clip-path: polygon(5vw 0, 100% 0, calc(100% - 5vw) 100%, 0 100%);
+    z-index: 2;
+}
+
+#bridge {
+    left: 56vw;
+        /* 计算：28vw + 38vw - 10vw = 56vw（重叠10vw） */
+    background-image: url("../图片素材/主页图/桥梁（主页图）.jpg");
+    clip-path: polygon(5vw 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.theme-item:hover {
+    filter: grayscale(0) brightness(1);
+    z-index: 10;
+    transform: scale(1.03);
+}
+
+.theme-item h2 {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 5;
+}
+
+/* 4. 专区通用样式（导航栏+页脚） */
+/* 导航栏 */
+.nav {
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-menu-item {
+    color: white;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-menu-item:hover {
+    color: #c41e3a;
+}
+
+/* 专区内容区（避开导航栏） */
+.zone-content {
+    width: 100%;
+    padding: 80px 20px 60px;
+    /* 上80（导航）、下60（页脚） */
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.zone-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 页脚 */
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 0.9rem;
+}

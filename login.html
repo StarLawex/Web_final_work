@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国古代建筑 - 登录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="login-title">用户登录</h2>
+            <!-- 登录/注册标签 -->
+            <div class="login-tab">
+                <div class="login-tab-item active" onclick="switchTab('login')">账号登录</div>
+                <div class="login-tab-item" onclick="switchTab('register')">账号注册</div>
+            </div>
+            <!-- 登录表单 -->
+            <div class="login-form active" id="login-form">
+                <div class="form-item">
+                    <label>账号</label>
+                    <input type="text" placeholder="请输入账号">
+                </div>
+                <div class="form-item">
+                    <label>密码</label>
+                    <input type="password" placeholder="请输入密码">
+                </div>
+                <button class="form-btn" onclick="window.location.href='main.html'">登录</button>
+                <button class="tourist-btn" onclick="window.location.href='main.html'">游客登录</button>
+            </div>
+            <!-- 注册表单 -->
+            <div class="login-form" id="register-form">
+                <div class="form-item">
+                    <label>账号</label>
+                    <input type="text" placeholder="请设置账号">
+                </div>
+                <div class="form-item">
+                    <label>密码</label>
+                    <input type="password" placeholder="请设置密码">
+                </div>
+                <div class="form-item">
+                    <label>确认密码</label>
+                    <input type="password" placeholder="请确认密码">
+                </div>
+                <button class="form-btn">注册</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        网站所属：XX课程设计 | 作者邮箱：xxx@xxx.com
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
