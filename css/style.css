@@ -11,11 +11,43 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
+    flex-direction: column;/* 强制元素垂直排列（标题在上，按钮在下） */
+    align-items: center;/* 水平居中 */
+    justify-content: center;/* 垂直居中（整体在屏幕中间） */
+    background-image: url('../图片素材/主页图/主页面.jpg');
+    background-size: cover; /* 背景图铺满容器 */
+    background-position: center; /* 背景图居中 */
+    background-repeat: no-repeat; /* 禁止重复 */
+    /* 可选：加半透明遮罩，让按钮更清晰 */
+    position: relative;
+    
+}
+/* 遮罩层保留（让文字更清晰） */
+.main-entry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
+/* 新增标题样式 */
+.entry-title {
+  color: rgb(199, 194, 194); /* 文字白色 */
+  font-size: 7rem; /* 字号可调整，比如3rem/5rem */
+  font-weight: bold;
+  margin-top: -200px;
+  margin-bottom: 100px; /* 和按钮保持间距 */
+  /* 可选：加文字阴影，增强立体感 */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  /* 可选：加书法字体（需引入字体，见下方补充） */
+  font-family: "楷体", "微软雅黑", sans-serif;
+  position: relative;
+  z-index: 2; /* 标题在遮罩上方 */
+}
 .entry-btn {
     padding: 20px 60px;
     font-size: 2rem;
@@ -25,6 +57,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .entry-btn:hover {
@@ -220,6 +254,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .nav-menu {
@@ -232,6 +267,7 @@
     margin-left: 30px;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: 1.1rem; 
 }
 
 .nav-menu-item:hover {
@@ -268,3 +304,167 @@
     left: 0;
     font-size: 0.9rem;
 }
+
+/*--------------------------------------------*/
+
+/* 宫殿选择界面容器 */
+.palace-select-container {
+  width: 100%;
+  padding: 80px 50px 60px; /* 避开导航/页脚 */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* 筛选标签栏 */
+.filter-tag-wrap {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.tag-group {
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+.tag-title {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+.tag-item {
+  display: inline-block;
+  padding: 6px 15px;
+  margin-right: 10px;
+  background-color: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tag-item.active {
+  background-color: #c41e3a;
+  color: white;
+}
+.reset-tag {
+  background-color: #666;
+  color: white;
+}
+.reset-tag:hover {
+  background-color: #444;
+}
+
+/* 宫殿卡片列表 */
+.palace-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 自适应列数 */
+  gap: 25px;
+}
+.palace-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.palace-card:hover {
+  transform: translateY(-5px);
+}
+.palace-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* 图片裁剪不拉伸 */
+}
+.palace-name {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+
+/* 宫殿详情页容器 */
+.palace-detail-container {
+  width: 100%;
+  padding: 80px 50px 60px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+.back-btn {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.detail-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 图片展示区 */
+.palace-img-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+.main-img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.sub-img-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.sub-img-list img {
+  width: calc(100% / 3);
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.sub-img-list img:hover {
+  opacity: 1;
+}
+
+/* 详情介绍区 */
+.palace-detail-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.detail-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.section-title {
+  font-size: 1.5rem;
+  color: #c41e3a;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+.detail-section p {
+  line-height: 1.8;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+
+/*--------------------------------------------*/

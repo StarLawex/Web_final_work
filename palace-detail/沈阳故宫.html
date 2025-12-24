@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>筑迹千年 - 北京故宫</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- 复用导航栏 -->
+  <div class="nav">
+    <div class="nav-logo" onclick="window.location.href='../main.html'">脊上山河</div>
+    <div class="nav-menu">
+      <div class="nav-menu-item" onclick="window.location.href='../palace-select.html'">宫殿</div>
+      <div class="nav-menu-item" onclick="window.location.href='../homestay.html'">民宿</div>
+      <div class="nav-menu-item" onclick="window.location.href='../bridge.html'">桥梁</div>
+      <div class="nav-menu-item">朝代地图</div>
+      <div class="nav-menu-item">个人中心</div>
+    </div>
+  </div>
+
+  <!-- 详情页内容 -->
+  <div class="palace-detail-container">
+    <!-- 返回按钮 -->
+    <button class="back-btn" onclick="window.location.href='../palace-select.html'">← 返回宫殿名录</button>
+    
+    <!-- 宫殿标题 -->
+    <h1 class="detail-title">沈阳故宫</h1>
+    
+    <!-- 多图片展示区 -->
+    <div class="palace-img-wrap">
+      <div class="main-img">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫.jpg" alt="故宫全景">
+      </div>
+      <div class="sub-img-list">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫1.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫2.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫3.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/沈阳故宫/沈阳故宫4.jpg" onclick="changeMainImg(this)">
+      </div>
+    </div>
+
+    <!-- 详情介绍区 -->
+    <div class="palace-detail-content">
+      <div class="detail-section">
+        <h2 class="section-title">历史沿革</h2>
+        <p>沈阳故宫，又称盛京皇宫，位于辽宁省沈阳市沈河区，为清朝初期的皇宫。沈阳故宫始建于清太祖天命十年（1625年），建成于清崇德元年（1636年）。 总占地面积63272平方米，建筑面积18968平方米。它不仅是中国仅存的两大皇家宫殿建筑群之一，也是中国关外唯一的一座皇家建筑群。
+清朝迁都北京后，故宫被称作“陪都宫殿”“留都宫殿”。后来就称之为沈阳故宫。共经历努尔哈赤、皇太极、乾隆三个建造时期，历时158年。 建筑100余座、500余间。入关以后，康熙、乾隆、嘉庆、道光，相继十次“东巡”时作为驻跸所在。</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-title">建筑成就</h2>
+        <p>沈阳故宫按照建筑布局和建造先后，可以分为3个部分：东路、中路和西路。东路包括努尔哈赤时期建造的大政殿与十王亭，是皇帝举行大典和八旗大臣办公的地方。中路为清太宗时期续建，是皇帝进行政治活动和后妃居住的场所。西路则是清朝皇帝“东巡”盛京时，读书看戏和存放《四库全书》的场所。在建筑艺术上承袭了中国古代建筑传统，集汉、满、蒙族建筑艺术为一体，具有很高的历史和艺术价值。</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-title">核心特色</h2>
+        <p>1961年3月4日，沈阳故宫被中华人民共和国国务院公布为第一批全国重点文物保护单位。 2004年7月1日，在中国苏州召开的第28届世界遗产委员会会议批准沈阳故宫作为明清皇宫文化遗产扩展项目列入《世界遗产名录》。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 复用页脚 -->
+  <div class="footer">
+    网站所属：StarLaw | 作者邮箱：1975543476@qq.com
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>筑迹千年 - 北京故宫</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- 复用导航栏 -->
+  <div class="nav">
+    <div class="nav-logo" onclick="window.location.href='../main.html'">脊上山河</div>
+    <div class="nav-menu">
+      <div class="nav-menu-item" onclick="window.location.href='../palace-select.html'">宫殿</div>
+      <div class="nav-menu-item" onclick="window.location.href='../homestay.html'">民宿</div>
+      <div class="nav-menu-item" onclick="window.location.href='../bridge.html'">桥梁</div>
+      <div class="nav-menu-item">朝代地图</div>
+      <div class="nav-menu-item">个人中心</div>
+    </div>
+  </div>
+
+  <!-- 详情页内容 -->
+  <div class="palace-detail-container">
+    <!-- 返回按钮 -->
+    <button class="back-btn" onclick="window.location.href='../palace-select.html'">← 返回宫殿名录</button>
+    
+    <!-- 宫殿标题 -->
+    <h1 class="detail-title">大明宫</h1>
+    
+    <!-- 多图片展示区 -->
+    <div class="palace-img-wrap">
+      <div class="main-img">
+        <img src="../图片素材/皇宫/大明宫/大明宫.jpg" alt="大明宫全景">
+      </div>
+      <div class="sub-img-list">
+        <img src="../图片素材/皇宫/大明宫/大明宫1.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/大明宫/大明宫2.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/大明宫/大明宫3.jpg" onclick="changeMainImg(this)">
+        <img src="../图片素材/皇宫/大明宫/大明宫4.jpg" onclick="changeMainImg(this)">
+      </div>
+    </div>
+
+    <!-- 详情介绍区 -->
+    <div class="palace-detail-content">
+      <div class="detail-section">
+        <h2 class="section-title">历史沿革</h2>
+        <p>大明宫，大唐帝国的大朝正宫，唐朝的政治中心和国家象征
+             ，位于唐京师长安（今西安）北侧的龙首原 ，是唐长安
+             城三座主要宫殿“三大内”（大明宫、太极宫、兴庆宫）中
+             规模最大的一座，称为“东内”。自唐高宗起，先后有17位
+             唐朝皇帝在此处理朝政，历时达240余年 。大明宫是唐帝国
+             最宏伟壮丽的宫殿建筑群，也是当时世界上面积最大的宫殿建筑群。</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-title">建筑成就</h2>
+        <p>大明宫始建于唐太宗贞观八年（634年），占地面积约3.2平方千米 
+            ，整个宫域可分为前朝和内庭两部分，前朝以朝会为主，内庭以居
+            住和宴游为主。前朝的中心为含元殿（外朝）、宣政殿（中朝）、
+            紫宸殿（内朝），内庭有太液池，各种别殿、亭、观等30余所。</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-title">核心特色</h2>
+        <p>1961年3月4日，大明宫遗址被中华人民共和国国务院公布为第一
+            批全国重点文物保护单位。2009年9月9日，史诗纪录片《大明宫
+            》在联合国总部首映，开创了中国电影在联合国首映的先河 。2
+            010年，西安市在大明宫原址建立大明宫国家遗址公园 。2014年
+            6月22日，大明宫遗址作为“丝绸之路：长安-天山廊道的路网”中
+            的一处遗址点成功列入《世界遗产名录》。2021年10月18日，大
+            明宫遗址入选“百年百大考古发现”。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 复用页脚 -->
+  <div class="footer">
+    网站所属：StarLaw | 作者邮箱：1975543476@qq.com
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
