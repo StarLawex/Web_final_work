@@ -1,22 +1,22 @@
 // 登录界面标签切换
 function switchTab(type) {
-    // 隐藏所有表单
-    document.querySelectorAll('.login-form').forEach(form => {
-        form.classList.remove('active');
-    });
-    // 移除所有标签激活态
-    document.querySelectorAll('.login-tab-item').forEach(item => {
-        item.classList.remove('active');
-    });
-    // 激活选中的标签和表单
-    document.getElementById(`${type}-form`).classList.add('active');
-    event.target.classList.add('active');
+  // 隐藏所有表单
+  document.querySelectorAll('.login-form').forEach(form => {
+    form.classList.remove('active');
+  });
+  // 移除所有标签激活态
+  document.querySelectorAll('.login-tab-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  // 激活选中的标签和表单
+  document.getElementById(`${type}-form`).classList.add('active');
+  event.target.classList.add('active');
 }
 
 // 游客登录逻辑（可扩展：存储游客标识）
 document.querySelector('.tourist-btn')?.addEventListener('click', () => {
-    // 模拟游客登录，跳转到三分区界面
-    window.location.href = 'main.html';
+  // 模拟游客登录，跳转到三分区界面
+  window.location.href = 'main.html';
 });
 
 
@@ -43,7 +43,7 @@ function filterPalace(type, value) {
     const dynastyMatch = !activeFilters.dynasty || card.dataset.dynasty === activeFilters.dynasty;
     const typeMatch = !activeFilters.type || card.dataset.type === activeFilters.type;
     const areaMatch = !activeFilters.area || card.dataset.area === activeFilters.area;
-    
+
     card.style.display = (dynastyMatch && typeMatch && areaMatch) ? 'block' : 'none';
   });
 }
@@ -63,9 +63,10 @@ document.querySelectorAll('.palace-card').forEach(card => {
     '北京故宫': 'palace-detail/故宫.html',
     '大明宫': 'palace-detail/大明宫.html',
     '未央宫': 'palace-detail/未央宫.html',
-    '沈阳故宫':'palace-detail/沈阳故宫.html',
-    '承德避暑山庄':'palace-detail/承德避暑山庄.html',
-    '殷墟宫殿宗庙遗址':'palace-detail/殷墟宫殿宗庙遗址.html'
+    '沈阳故宫': 'palace-detail/沈阳故宫.html',
+    '承德避暑山庄': 'palace-detail/承德避暑山庄.html',
+    '殷墟宫殿宗庙遗址': 'palace-detail/殷墟宫殿宗庙遗址.html',
+    '布达拉宫': 'palace-detail/布达拉宫.html'
   };
   card.onclick = () => {
     window.location.href = pageMap[palaceName] || '#';
